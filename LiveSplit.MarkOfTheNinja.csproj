@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net481</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LiveSplit.MarkOfTheNinja</RootNamespace>
+    <AssemblyName>LiveSplit.MarkOfTheNinja</AssemblyName>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseWindowsForms>true</UseWindowsForms>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="LiveSplit.Core">
+      <HintPath>$(LiveSplitPath)\LiveSplit.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UpdateManager">
+      <HintPath>$(LiveSplitPath)\UpdateManager.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="docs\**" />
+  </ItemGroup>
+
+  <Target Name="CopyToLiveSplit" AfterTargets="Build">
+    <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(LiveSplitPath)\Components\" />
+  </Target>
+
+</Project>

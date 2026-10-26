@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+  <update version="1.0.0.0">
+    <files>
+      <file path="LiveSplit.MarkOfTheNinja.dll" localPath="Components/LiveSplit.MarkOfTheNinja.dll" status="changed" />
+    </files>
+    <changelog>
+      <change>Initial release: auto-start, level splits, final choice split, auto-reset and load removal.</change>
+    </changelog>
+  </update>
+</updates>
